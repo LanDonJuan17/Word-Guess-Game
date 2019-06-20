@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/javascript/game.js"></script>
+
     <title>Word Guess Game</title>
 </head>
 
 </style>
 
 <body>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 
     <main>
         <div class="jumbotron-home" style="height:1000px; padding:150px;">
@@ -22,23 +23,26 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col">
-                        <div class='col-8 text-white'>
+                        <div class='col-4 text-white'>
                             <h1 class="display-4">Space Hangman</h1>
-                            <p class="lead">Press any letter to begin! You will have 15 chances to guess the correct
+                            <p class="lead">Click "Start Game" to begin! You will have 15 chances to guess the correct
                                 letters of the
                                 word. </p>
                             <hr class="my-4">
                             <p>Hint: All possible words are related to Outer Space!.</p>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-4" id="compWord"></div>
+                        </div>
+
+                        <div class="col-sm-4" id="answer"></div>
                     </div>
-                    <div id="answersArray"></div>
-                    <p id="lives"></p>
+                    <a class="btn btn-primary btn-lg" href="assets/javascript/game.js" role="button">Start Game</a>
                 </div>
             </div>
 
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </div>
-
+        </div>
 
 
 
