@@ -2,3 +2,21 @@
      background-image: url("../images/needle.jpg")
 
 }
+
+header{
+
+    color: chartreuse ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    margin: 50px;
+    padding: 75px;
+    border: auto;
+    letter-spacing: 3px;
+
+}
+#blanks{
+    color: chartreuse;
+
+}
+body{
+    color: chartreuse;
+}
