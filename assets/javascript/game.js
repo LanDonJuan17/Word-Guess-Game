@@ -1,68 +1,121 @@
-(function () {
-    var chooseWord = function () {
-        var words = [
-            "galaxy",
-            "asteroid",
-            "stars",
-            "planet",
-            "sun",
-            "moon",
-            "universe",
-            "supernova",
-            "blackhole",
-            "comet"];
 
-        var wordChoice = words[Math.floor(Math.random() * words.length)];
-        document.getElementById("chosenWord").innerHTML =
-            wordChoice;
+var game = function(wrapper){
+
+    return document.getElementById(wrapper);
+  }
+  
+
+var words 
+var wordChoice 
+var answer 
+var myLength 
+var display 
+var win 
+var letters 
+var attemptsLeft 
+var output 
+var userWord 
+
+    var setup = function()
+    {
+       words = [ "galaxy",
+       "asteroid",
+       "stars",
+       "planet",
+       "sun",
+       "moon",
+       "universe",
+       "supernova",
+       "blackhole",
+       "comet"]
+       wordChoice = Math.floor(Math.random()*11);
+       answer = words[wordChoice];
+       myLength = answer.length;
+       display = [myLength];
+       win = myLength;
+       letters = answer.split('');
+       attemptsLeft = 10;
+       output = "";
+       userWord = "";
+      
+
+   
 
 
-        var wordSpaces = wordChoice.length;
-        for (var i = 0; i < wordlength; i++) {
-            wordChoice = [wordChoice.slice(0, i * 2 + 1), ' ', wordChoice.slice(i * 2 + 1)].join('');
-        }
-        var letters = "_";
-        var wordLength = wordChoice.length;
-
-        for (i = 0; i < wordLength; i++) {
-            var x = wordChoice.charAt(i);
-        }
-
-        if (x === "" || x === "/'") {
-            blanks += x;
-        }
-        else {
-            blanks += "_";
-        }
+    for (var i=0; i<answer.length; i++)
+    {
+  
+      display[i] =  "- ";
+      output = output + display[i];
+    };
+    
+    game("words").innerHTML = output;
+    output = "";
+    
     }
-    document.getElementById("blanks").innerHTML = blanks;
-});
-
-document.onkeypress = function (keyPressed) {
-    var keyPressed = keyPressed || window.event,
-        charCode = keyPressed.keyCode || keyPressed.which,
-        userGuess = String.fromCharCode(charCode);
-    result = function () {
-        wordHolder = document.getElementById('hold');
-        correct = document.createElement('ul');
-        for (var i = 0; i < word.length; i++) {
-            correct.setAttribute('id', 'my-word');
-            guess = document.createElement('li');
-            guess.setAttribute('class', 'guess');
-            if (word[i] === "-") {
-                guess.innerHTML = "-";
-                space = 1;
-            } else {
-                guess.innerHTML = "_";
-            }
-
-            geusses.push(guess);
-            wordHolder.appendChild(correct);
-            correct.appendChild(guess);
-        }
+  
+  
+  
+  
+  var submit = function()
+  {
+  
+      output= "";
+      userWord=game("letters").value;
+      game("letters").value="";
+  
+      for( var c=0; c< answer.length; c++)
+      {
+        
+          if (userWord.toLowerCase()== letters[c])
+          {
+              display[c] = userWord.toLowerCase();
+              win--;
+          }
+          output = output + display[c]+ " ";
+          
+  
+          
+      }
+  
+      
+  
+      game("words").innerHTML = output;
+      output="";
+      attemptsLeft--;
+      if (win < 1)
+      {game("guesses").innerHTML = "YOU WIN !!!"
+      
+      setup();
+    
     }
-    var userGuess = keyPressed
-    document.getElementById("userGuess").innerHTML += userGuess;
-    document.getElementById("")
-
-};
+  
+    
+  
+      else if(attemptsLeft <1)
+  
+      {
+        
+        game("guesses").innerHTML ="YOU LOSE!!!";
+        setup();
+    
+      }
+  
+      else {
+  
+          game("guesses").innerHTML = " YOU HAVE "+ attemptsLeft + " GUESSES LEFT";
+      }
+  }
+  
+  
+      window.onload = function()
+  
+      {
+           setup();
+        
+  
+      }
+  
+    
+      
+  

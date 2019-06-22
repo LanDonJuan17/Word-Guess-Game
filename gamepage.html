@@ -6,26 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Space Hangman</title>
-    <script src=assets/javascript/game.js> </script> <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body background="assets/images/needle.jpg">
-    <div class="wrapper">
-      
-            <header>
-                <h3>Press any key to begin!</h3>
-            </header>
+<body background= "assets/images/needle.jpg" >
+
+   
+    <div id="wrapper">
+
         
-                <div class="col-sm-4"><u>
-                    <p id="chosenWord"></p></u></div>
+            <h2 id="guesses"> YOU HAVE 10 CHANCES TO GUESS</h2>
+            <h3>Press any key to begin!</h3>
+        
+
+        
+                <p id="words"></p>
+
+        
+        
+        <div class="form-group">
+                <label for="exampleInputmonth">Type your letter here</label>
+                <input type="text" maxlength="1" class="form-control" id="letters" placeholder="letter">
             </div>
-            <br>
-            <span id="blanks"></span>
+           
+
+            <button type="submit" id= "button" class="btn btn-primary" onclick="submit()">Guess</button>
+        
 
 
-            <div class="col-sm-4" id="answer"></div>
-        </div>
-    </div>
+       
+    
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 
 </html>
